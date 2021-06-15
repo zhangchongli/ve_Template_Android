@@ -4,7 +4,7 @@ import android.annotation.SuppressLint
 import android.os.Bundle
 import android.widget.FrameLayout
 import androidx.appcompat.app.AppCompatActivity
-import com.bytedance.bdh5.BDH5
+import com.bytedance.veh5.VEH5
 import com.bytedance.webx.core.webview.WebViewContainer
 import com.volcengine.mars.demo.h5.CommonWebSettings
 import com.volcengine.mars.demo.h5.R
@@ -32,7 +32,9 @@ abstract class BaseH5Activity : AppCompatActivity() {
 
         webView = createWebViewContainer()
 
-        val layoutParams = FrameLayout.LayoutParams(FrameLayout.LayoutParams.MATCH_PARENT, FrameLayout.LayoutParams.MATCH_PARENT)
+        val layoutParams = FrameLayout.LayoutParams(
+            FrameLayout.LayoutParams.MATCH_PARENT,
+            FrameLayout.LayoutParams.MATCH_PARENT)
 
         webViewContainer.addView(webView, layoutParams)
 
@@ -49,7 +51,7 @@ abstract class BaseH5Activity : AppCompatActivity() {
 
     override fun onDestroy() {
         super.onDestroy()
-        BDH5.onWebViewDestroy(webView)
+        VEH5.onWebViewDestroy(webView)
     }
 
 }

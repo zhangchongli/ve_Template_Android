@@ -8,8 +8,11 @@
     <string name="btn_close">关闭</string>
 
     <string name="btn_open_develop_activity">调试页面</string>
-    <string name="btn_open_example_activity">示例页面</string>
+    <string name="btn_open_example_online_activity">示例页面(在线)</string>
+    <string name="btn_open_example_offline_activity">示例页面(离线)</string>
 
     <string name="event_content">这是Native发送的内容</string>
 
+    <string name="menu_load_record">加载记录</string>
+    <string name="no_record">暂无记录</string>
 </resources>

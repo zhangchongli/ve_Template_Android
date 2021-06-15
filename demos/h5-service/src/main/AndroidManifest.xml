@@ -25,6 +25,7 @@
             android:configChanges="orientation|screenSize"
             android:label="@string/activity_label_h5_example" />
 
+        <activity android:name=".OfflineRecordActivity"/>
 
     </application>
 

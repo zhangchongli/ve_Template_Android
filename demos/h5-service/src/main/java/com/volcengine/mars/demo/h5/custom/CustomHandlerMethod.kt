@@ -17,6 +17,8 @@ class CustomHandlerMethod : XCoreBridgeMethod() {
 
     override val name: String = "o.customMethod"
 
+    override val access: XBridgeMethod.Access = XBridgeMethod.Access.PUBLIC
+
     override fun handle(
         params: XReadableMap,
         callback: XBridgeMethod.Callback,
@@ -24,7 +26,7 @@ class CustomHandlerMethod : XCoreBridgeMethod() {
     ) {
 
         val context = contextProviderFactory?.provideInstance(Context::class.java)
-                ?: return onFailure(callback, XBridgeMethod.FAIL, "context not provided in host")
+            ?: return onFailure(callback, XBridgeMethod.FAIL, "context not provided in host")
 
         val content = params.getString("content")
 

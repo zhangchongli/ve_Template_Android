@@ -15,10 +15,17 @@
 
 
     <Button
-        android:id="@+id/openExampleActivityBtn"
+        android:id="@+id/openExampleOnlineActivityBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/btn_open_example_activity"
+        android:text="@string/btn_open_example_online_activity"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/openExampleOfflineActivityBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_open_example_offline_activity"
         android:textAllCaps="false" />
 
 </LinearLayout>
