@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest package="com.volcengine.mars.demo.hotfix"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application>
+        <activity
+            android:name="com.volcengine.mars.demo.hotfix.HotfixDemoActivity"
+            android:label="热修复">
+            <intent-filter>
+                <action android:name="com.volcengine.mars.action.demo" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

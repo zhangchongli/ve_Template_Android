@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.volcengine.mars.demo.qrcode">
+
+    <application>
+        <activity
+            android:name=".QrCodeDemoActivity"
+            android:label="扫描二维码">
+            <intent-filter>
+                <action android:name="com.volcengine.mars.action.demo" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.volcengine.mars.qrcode.QrCodeActivity"
+            android:launchMode="standard"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+    </application>
+
+</manifest>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.volcengine.mars.demo.h5">
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application>
+
+        <activity
+            android:name=".H5MainActivity"
+            android:label="@string/activity_label_h5_main">
+            <intent-filter>
+                <action android:name="com.volcengine.mars.action.demo" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".H5DevelopActivity"
+            android:configChanges="orientation|screenSize"
+            android:label="@string/activity_label_h5_develop" />
+
+        <activity
+            android:name=".H5ExampleActivity"
+            android:configChanges="orientation|screenSize"
+            android:label="@string/activity_label_h5_example" />
+
+
+    </application>
+
+</manifest>

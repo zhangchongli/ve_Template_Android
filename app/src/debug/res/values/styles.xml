@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="host_text_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">28dp</item>
+        <item name="android:textColor">#ff00ff</item>
+        <item name="android:typeface">serif</item>
+    </style>
+
+    <!-- Base application theme. -->
+    <style name="HostAppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">#1C86EE</item>
+        <item name="colorPrimaryDark">#1C86EE</item>
+        <item name="colorAccent">#1C86EE</item>
+
+    </style>
+
+
+</resources>

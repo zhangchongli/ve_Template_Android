@@ -1,0 +1,24 @@
+// 自动引入gradle/component下的脚本
+apply from: "http://lf1-ttcdn-tos.pstatp.com/obj/mars-plugin/component-script.gradle"
+
+include ':app'
+include(":buildSrc")
+include(":launch")
+
+// >>>>>>>>>>>>>>>> 加载【组件接入模块】
+def thirdparty = file(rootDir.absolutePath + File.separator + "init")
+if (thirdparty.exists()) {
+    thirdparty.eachDir {
+        include(":init:${it.name}")
+    }
+}
+// <<<<<<<<<<<<<<<< 加载【组件接入模块】
+
+// >>>>>>>>>>>>>>>> 加载【组件demo模块】
+def demos = file(rootDir.absolutePath + File.separator + "demos")
+if (demos.exists()) {
+    demos.eachDir {
+        include(":demos:${it.name}")
+    }
+}
+// <<<<<<<<<<<<<<<<

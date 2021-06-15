@@ -1,0 +1,12 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.volcengine.mars.demo.immersed">
+
+    <application>
+        <activity android:name="com.volcengine.mars.demo.immersed.ImmersedDemoActivity"
+            android:label="沉浸式状态栏">
+            <intent-filter>
+                <action android:name="com.volcengine.mars.action.demo" />
+            </intent-filter>
+        </activity>
+    </application>
+</manifest>

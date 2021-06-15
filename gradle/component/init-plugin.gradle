@@ -1,0 +1,16 @@
+/**
+ * init scheduler framework gradle script
+ */
+project.buildscript.dependencies.with {
+    classpath BaselineDeps.init_task_plugin
+}
+
+project.ext.marsAppTasks.put("init", { p ->
+    p.with {
+        apply plugin: "com.bytedance.lego.init-plugin"
+        initSchedulerConfig {
+            //InitTask 包名配置，为加快编译速度，InitTask的包名必须在特定包名下。默认是 com/ss/android/init/tasks/，支持自定义配置
+            taskPackagePath = ["com/ss/android/init/tasks"]
+        }
+    }
+})

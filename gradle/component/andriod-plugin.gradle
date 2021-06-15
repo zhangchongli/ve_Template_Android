@@ -1,0 +1,12 @@
+/**
+ * android component gradle script
+ */
+project.buildscript.dependencies.with {
+    classpath BaselineDeps.android_gradle_plugin
+}
+
+project.ext.marsAppTasks.put("android", { p ->
+    p.with {
+        apply plugin: 'com.android.application'
+    }
+})

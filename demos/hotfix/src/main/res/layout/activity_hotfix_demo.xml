@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".HotfixDemoActivity">
+
+    <Button
+        android:id="@+id/btn_fetch_patch_from_net"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="从网络更新补丁"/>
+
+    <Button
+        android:id="@+id/btn_fetch_patch_from_local"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="从本地更新补丁"/>
+
+    <Button
+        android:id="@+id/btn_java_test"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="测试java代码"
+        android:textAllCaps="false"/>
+
+    <Button
+        android:id="@+id/btn_clear_patch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="清除本地补丁"
+        android:textAllCaps="false"/>
+
+    <TextView
+        android:id="@+id/tv_show"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"/>
+
+</LinearLayout>

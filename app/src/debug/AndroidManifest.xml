@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <application>
+        <activity
+            android:name="com.volcengine.mars.app.DeveloperActivity"
+            android:label="开发小助手"/>
+    </application>
+
+</manifest>

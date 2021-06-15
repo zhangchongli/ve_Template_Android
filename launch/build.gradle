@@ -1,0 +1,22 @@
+apply from: rootProject.file('gradle/library.gradle')
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'androidx.localbroadcastmanager:localbroadcastmanager:1.0.0'
+
+    kapt BaselineDeps.service_manager_processor
+    implementation BaselineDeps.service_manager
+    implementation BaselineDeps.service_manager_ext
+
+    api BaselineDeps.support_compat
+    api BaselineDeps.appcompat
+    api BaselineDeps.activity
+    implementation BaselineDeps.init_task_api
+    implementation BaselineDeps.init_task_scheduler
+    implementation BaselineDeps.godzilla_lib
+    implementation BaselineDeps.godzilla_anr
+    implementation BaselineDeps.godzilla_crash
+    implementation BaselineDeps.godzilla_sysopt
+    api BaselineDeps.utility
+    api BaselineDeps.onekit_sdk
+}

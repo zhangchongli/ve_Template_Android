@@ -1,0 +1,39 @@
+/**
+ * https://www.volcengine.com/docs/6363/67015
+ * hotfix component gradle script
+ */
+project.buildscript.dependencies.with {
+    classpath BaselineDeps.hotfix_plugin
+}
+
+project.ext.marsAppTasks.put("hotfix", { p ->
+    p.with {
+        apply plugin: 'com.bytedance.hotfix'
+
+        hotfix {
+            insertOptions {
+                //插入代码的包名，包名前缀匹配，只有插入了代码的包才支持修复
+                insertPackage "com.volcengine.mars"
+            }
+
+            /**
+             * Absolute path is recommended here, in case the file cannot be found
+             *
+             * These three files need to be obtained from the build directory of
+             * your :app module after building the project locally. It is recommended
+             * to save these three files to a persistent folder for repeated use.
+             *
+             * For more detailed usage, please refer to hotfix documentation at
+             *  https://www.volcengine.com/docs/6363/67053
+             * */
+            patchOptions {
+                //待修复的apk文件
+                oldApkPath project.rootProject.file("./app/build/outputs/apk/release/app-release.apk")
+                //待修复apk对应的mapping文件
+                mappingFile project.rootProject.file("./app/build/outputs/mapping/release/mapping.txt")
+                //待修复apk打包生成记录方法id的文件
+                methodIdFile project.rootProject.file("./app/build/hotfix-output/methodId.txt")
+            }
+        }
+    }
+})

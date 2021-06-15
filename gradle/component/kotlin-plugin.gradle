@@ -1,0 +1,14 @@
+/**
+ * kotlin component gradle script
+ */
+project.buildscript.dependencies.with {
+    classpath BaselineDeps.kotlin_gradle_plugin
+}
+
+project.ext.marsAppTasks.put("kotlin", { p ->
+    p.with {
+        apply plugin: 'kotlin-android'
+        apply plugin: 'kotlin-kapt'
+        apply plugin: 'kotlin-android-extensions'
+    }
+})

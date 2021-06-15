@@ -1,0 +1,8 @@
+apply from: rootProject.file('gradle/library.gradle')
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation project(':launch')
+    implementation BaselineDeps.init_task_api
+    api BaselineDeps.hotfix_sdk
+}

@@ -1,0 +1,27 @@
+apply plugin: 'groovy'
+apply plugin: 'kotlin'
+buildscript {
+    repositories {
+        mavenCentral()
+        maven {
+            url 'https://artifact.bytedance.com/repository/Volcengine/'
+        }
+    }
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.3.61"
+    }
+}
+repositories {
+    mavenCentral()
+    google()
+    maven {
+        url 'https://artifact.bytedance.com/repository/Volcengine/'
+    }
+}
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation gradleApi() //gradle sdk
+    implementation localGroovy() //groovy sdk
+    implementation "org.ow2.asm:asm:6.0"
+}
+

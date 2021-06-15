@@ -1,0 +1,84 @@
+pluginsx {
+    id 'android'
+    id 'onekit'
+    id 'init'
+    id 'kotlin'
+    id 'service'
+    id 'hotfix'
+}
+
+android {
+    packagingOptions {
+        exclude("META-INF/*.kotlin_module")
+    }
+    compileSdkVersion COMPILE_SDK_VERSION.toInteger()
+    defaultConfig {
+        vectorDrawables.useSupportLibrary = true
+        minSdkVersion MIN_SDK_VERSION
+        targetSdkVersion TARGET_SDK_VERSION
+        applicationId "com.volcengine.mars"
+        multiDexEnabled true
+
+        versionCode 1
+        versionName "1.1.0"
+
+        ndk {
+            abiFilters "armeabi", "armeabi-v7a"
+        }
+    }
+
+    signingConfigs {
+        bytedanceReleaseSignConfig {
+            storeFile rootProject.file("tools/demo.keystore")
+            storePassword 'marsdemo'
+            keyAlias 'marsdemo'
+            keyPassword 'marsdemo'
+        }
+    }
+    buildTypes {
+        release {
+            signingConfig signingConfigs.bytedanceReleaseSignConfig
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation BaselineDeps.material
+    testImplementation BaselineDeps.junit
+    androidTestImplementation BaselineDeps.runner
+    implementation BaselineDeps.constraint_layout
+    implementation BaselineDeps.support_compat
+    implementation BaselineDeps.appcompat
+    implementation project(":launch")
+
+    kapt BaselineDeps.service_manager_processor
+    implementation BaselineDeps.service_manager
+    implementation BaselineDeps.init_task_api
+    implementation BaselineDeps.init_task_scheduler
+    //引入immersed内容
+    debugImplementation project(":demos:immersed")
+    //引入permission内容
+    debugImplementation project(":demos:permission")
+    //引入screen内容
+    debugImplementation project(":demos:screentools")
+    //引入qrcode内容
+    debugImplementation project(":demos:qrcode")
+    //引入okhttp内容
+    debugImplementation project(":demos:okhttp")
+    //引入downloader内容
+    debugImplementation project(":demos:downloader")
+    //引入h5服务内容
+    implementation project(":init:h5-service")
+    debugImplementation project(":demos:h5-service")
+    //引入hotfix内容
+    implementation project(":init:hotfix")
+    debugImplementation project(":demos:hotfix")
+}

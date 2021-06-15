@@ -1,0 +1,20 @@
+<manifest package="com.volcengine.mars.hotfix"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
+    <application>
+        <!-- the version code that uniquely identifies the app version,
+            the patch publish service in mars will post the patch to
+            the appropriate version based on this value -->
+        <meta-data
+            android:name="UPDATE_VERSION_CODE"
+            android:value="1"/>
+
+        <!-- application id allocated in mars -->
+        <meta-data
+            android:name="MARS_APP_ID"
+            android:value="-1"/>
+    </application>
+</manifest>
