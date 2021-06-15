@@ -1,14 +1,17 @@
 package com.volcengine.mars.demo.h5
 
+import android.content.Intent
+import android.view.Menu
+import android.view.MenuItem
 import android.view.ViewGroup.LayoutParams.MATCH_PARENT
 import android.view.ViewGroup.LayoutParams.WRAP_CONTENT
 import android.widget.Button
 import android.widget.LinearLayout
-import com.bytedance.bdh5.BDH5
-import com.bytedance.bdh5.WebViewCreateProvider
 import com.bytedance.ies.xbridge.XBridgeMethod
 import com.bytedance.ies.xbridge.event.Event
 import com.bytedance.ies.xbridge.platform.web.inner.ReadableMapImpl
+import com.bytedance.veh5.VEH5
+import com.bytedance.veh5.WebViewCreateProvider
 import com.bytedance.webx.core.webview.WebViewContainer
 import com.volcengine.mars.demo.h5.base.BaseH5Activity
 import com.volcengine.mars.demo.h5.custom.OpenDialogMethod
@@ -37,14 +40,14 @@ class H5ExampleActivity : BaseH5Activity() {
         }
     }
 
-    override fun createWebViewContainer(): WebViewContainer = BDH5.obtainWebViewContainer(this, WebViewProvider())!!
+    override fun createWebViewContainer(): WebViewContainer = VEH5.obtainWebViewContainer(this, WebViewProvider())!!
 
     private fun openJsDialog() {
         val params = ReadableMapImpl(JSONObject().apply {
             put("content", getString(R.string.event_content))
         })
         val event = Event(eventName = "o.openJsDialog", timestamp = System.currentTimeMillis(), params = params)
-        BDH5.sendEvent(event)
+        VEH5.sendEvent(event)
     }
 
     private class WebViewProvider : WebViewCreateProvider() {
@@ -59,5 +62,20 @@ class H5ExampleActivity : BaseH5Activity() {
         super.applySettings()
 
         webView.loadUrl("https://mars-jsbridge.goofy-web.bytedance.com/example#/")
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.activity_offline_h5, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when(item.itemId) {
+            R.id.menu_open_load_record_page -> {
+                startActivity(Intent(this, OfflineRecordActivity::class.java))
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
     }
 }
