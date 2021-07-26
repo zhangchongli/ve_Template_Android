@@ -1,6 +1,6 @@
 apply from: rootProject.file('gradle/demo.gradle')
 
 dependencies {
-    implementation project(":launch")
-    implementation BaselineDeps.downloader
+    implementation "com.volcengine.mars:utility"
+    implementation "com.bytedance.ies.social.base:downloader"
 }

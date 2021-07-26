@@ -45,14 +45,14 @@ class MainActivity : BaseActivity() {
             id.developer_helper -> {
                 val comp = ComponentName(
                     this,
-                    "com.volcengine.mars.app.DeveloperActivity"
+                    "com.volcengine.dev_tool.DeveloperActivity"
                 )
                 val intent = Intent()
                 intent.component = comp
                 if (getPackageManager().resolveActivity(intent, 0) != null) {
                     startActivity(intent)
                 } else {
-                    Toast.makeText(this, "com.volcengine.mars.app.DeveloperActivity只在debug包存在！", Toast.LENGTH_LONG)
+                    Toast.makeText(this, "com.volcengine.dev_tool.DeveloperActivity只在debug包存在！", Toast.LENGTH_LONG)
                 }
                 true
             }

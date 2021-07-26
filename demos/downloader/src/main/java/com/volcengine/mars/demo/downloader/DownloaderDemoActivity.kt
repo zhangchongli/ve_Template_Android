@@ -3,11 +3,11 @@ package com.volcengine.mars.demo.downloader
 import android.Manifest.permission
 import android.os.Bundle
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.ss.android.socialbase.downloader.depend.AbsDownloadListener
 import com.ss.android.socialbase.downloader.downloader.Downloader
 import com.ss.android.socialbase.downloader.exception.BaseException
 import com.ss.android.socialbase.downloader.model.DownloadInfo
-import com.volcengine.mars.activity.BaseActivity
 import com.volcengine.mars.permissions.PermissionsManager
 import com.volcengine.mars.permissions.PermissionsResultAction
 import kotlinx.android.synthetic.main.activity_downloader_demo.download_button
@@ -29,7 +29,7 @@ import kotlin.concurrent.thread
  * if you defined the {@link DownloadListener}, you can find the failure reason
  * in the parameters of this failure callback.
  * */
-class DownloaderDemoActivity : BaseActivity() {
+class DownloaderDemoActivity : AppCompatActivity() {
 
     private val filename = "downloadtest.txt"
 
@@ -47,6 +47,17 @@ class DownloaderDemoActivity : BaseActivity() {
                 return@setOnClickListener
             }
             showDownloadTxtFile()
+        }
+    }
+
+    /**
+     * handle the permission request callbacks
+     * */
+    override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<String?>, grantResults: IntArray) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+        if (requestCode shr 16 and 0xffff == 0) {
+            // forwarding request to permission manager
+            PermissionsManager.getInstance().notifyPermissionsChange(this, permissions, grantResults)
         }
     }
 

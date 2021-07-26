@@ -1,9 +1,8 @@
 /**
- * https://www.volcengine.com/docs/6363/67015
  * hotfix component gradle script
  */
 project.buildscript.dependencies.with {
-    classpath BaselineDeps.hotfix_plugin
+    classpath "com.volcengine:hotfix-gradle-tools:2.2.0"
 }
 
 project.ext.marsAppTasks.put("hotfix", { p ->
@@ -27,12 +26,13 @@ project.ext.marsAppTasks.put("hotfix", { p ->
              *  https://www.volcengine.com/docs/6363/67053
              * */
             patchOptions {
+                //根据热修官网建议，将三个物料放到指定文件夹保存，3个物料在下面会提到怎么拿
                 //待修复的apk文件
-                oldApkPath project.rootProject.file("./app/build/outputs/apk/release/app-release.apk")
+                oldApkPath project.rootProject.file("hotfix-files/app-release.apk")
                 //待修复apk对应的mapping文件
-                mappingFile project.rootProject.file("./app/build/outputs/mapping/release/mapping.txt")
+                mappingFile project.rootProject.file("hotfix-files/mapping.txt")
                 //待修复apk打包生成记录方法id的文件
-                methodIdFile project.rootProject.file("./app/build/hotfix-output/methodId.txt")
+                methodIdFile project.rootProject.file("hotfix-files/methodId.txt")
             }
         }
     }

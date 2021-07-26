@@ -1,0 +1,45 @@
+/**
+ * mira component gradle script
+ */
+project.buildscript.dependencies.with {
+    classpath 'com.volcengine:mira-plugin:3.4.1.0'
+}
+
+
+project.ext.marsAppTasks.put("mira", { p ->
+    p.with {
+        apply plugin: 'com.bytedance.mira.application'
+    }
+})
+
+project.ext.marsAppTasks.put("mira_root", { p ->
+    p.with {
+        apply plugin: 'com.bytedance.mira.root'
+        mira {
+            switcher = true
+            hostProject = ":app"
+            publicXml = rootProject.file("public.xml")
+            // 是否检测宿主插件公共依赖的版本号
+            checkCommonDepsVersion = false
+            checkClass {
+                //开关，默认开
+                enable = true
+                noExistClassesWhiteList = [
+                        "javax/annotation/concurrent/ThreadSafe",
+                        "javax/annotation/CheckReturnValue",
+                        "java/lang/Synthetic",
+                        "javax/annotation/concurrent/Immutable",
+                        "javax/annotation/Nullable",
+                        "javax/annotation/concurrent/NotThreadSafe",
+                        "com/facebook/infer/annotation/Functional",
+                        "javax/annotation/Nonnull",
+                        "javax/annotation/concurrent/GuardedBy",
+                        "com/facebook/infer/annotation/ThreadSafe",
+                        "com/facebook/infer/annotation/ReturnsOwnership"
+                ]
+            }
+        }
+    }
+})
+
+

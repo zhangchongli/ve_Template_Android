@@ -2,21 +2,22 @@ apply from: rootProject.file('gradle/library.gradle')
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation platform ("com.volcengine.mars:platform:0.0.1-rc.21")
     implementation 'androidx.localbroadcastmanager:localbroadcastmanager:1.0.0'
 
-    kapt BaselineDeps.service_manager_processor
-    implementation BaselineDeps.service_manager
-    implementation BaselineDeps.service_manager_ext
+    kapt "com.bytedance.news.common:service-manager-processor:1.0.9"
+    implementation "com.bytedance.news.common:service-manager"
+    implementation "com.bytedance.news.common:service-manager-ext"
 
     api BaselineDeps.support_compat
     api BaselineDeps.appcompat
     api BaselineDeps.activity
-    implementation BaselineDeps.init_task_api
-    implementation BaselineDeps.init_task_scheduler
-    implementation BaselineDeps.godzilla_lib
-    implementation BaselineDeps.godzilla_anr
-    implementation BaselineDeps.godzilla_crash
-    implementation BaselineDeps.godzilla_sysopt
-    api BaselineDeps.utility
-    api BaselineDeps.onekit_sdk
+    implementation "com.bytedance.lego:init-api"
+    implementation "com.bytedance.lego:init-scheduler"
+    implementation "com.bytedance.platform:godzilla-lib"
+    implementation "com.bytedance.platform:godzilla-anr"
+    implementation "com.bytedance.platform:godzilla-crash"
+    implementation "com.bytedance.platform:godzilla-sysopt"
+    implementation "com.volcengine.mars:utility"
+    implementation "com.volcengine.onekit:onekit"
 }

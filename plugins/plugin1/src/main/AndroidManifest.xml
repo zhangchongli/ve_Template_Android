@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.volcengine.plugin1">
+
+    <application android:name="com.volcengine.plugin1.Plugin1Application">
+        <!--activity使用宿主主题-->
+        <activity
+            android:name="com.volcengine.plugin1.Plugin1MainActivity"
+            android:launchMode="standard"
+            android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen" />
+
+        <provider
+            android:name="com.volcengine.plugin1.Plugin1Provider"
+            android:authorities="com.volcengine.testplugin1provider" />
+
+        <receiver android:name="com.volcengine.plugin1.Plugin1Receiver">
+            <intent-filter>
+                <action android:name="com.volcengine.testplugin1receiver" />
+            </intent-filter>
+        </receiver>
+
+        <service android:name="com.volcengine.plugin1.Plugin1Service" />
+    </application>
+
+</manifest>

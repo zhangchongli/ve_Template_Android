@@ -1,9 +1,10 @@
 pluginsx {
     id 'android'
+    id 'mira'
     id 'onekit'
     id 'init'
     id 'kotlin'
-    id 'service'
+    id 'service_manager'
     id 'hotfix'
 }
 
@@ -59,10 +60,16 @@ dependencies {
     implementation BaselineDeps.appcompat
     implementation project(":launch")
 
-    kapt BaselineDeps.service_manager_processor
-    implementation BaselineDeps.service_manager
-    implementation BaselineDeps.init_task_api
-    implementation BaselineDeps.init_task_scheduler
+    implementation platform ("com.volcengine.mars:platform:0.0.1-rc.21")
+
+    implementation 'com.volcengine.mars:dev-tool'
+    kapt "com.bytedance.news.common:service-manager-processor:1.0.9"
+    implementation "com.bytedance.news.common:service-manager"
+    implementation "com.bytedance.lego:init-api"
+    implementation "com.bytedance.lego:init-scheduler"
+    implementation 'com.volcengine:mira'
+    implementation 'com.volcengine:morpheus-mira'
+
     //引入immersed内容
     debugImplementation project(":demos:immersed")
     //引入permission内容
@@ -71,14 +78,12 @@ dependencies {
     debugImplementation project(":demos:screentools")
     //引入qrcode内容
     debugImplementation project(":demos:qrcode")
-    //引入okhttp内容
-    debugImplementation project(":demos:okhttp")
     //引入downloader内容
     debugImplementation project(":demos:downloader")
-    //引入h5服务内容
-    implementation project(":init:h5-service")
-    debugImplementation project(":demos:h5-service")
+    //引入h5_service服务内容
+    debugImplementation project(":demos:h5_service")
     //引入hotfix内容
-    implementation project(":init:hotfix")
     debugImplementation project(":demos:hotfix")
+    //引入mira内容
+    debugImplementation project(":demos:mira")
 }

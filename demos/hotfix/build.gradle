@@ -1,6 +1,5 @@
 apply from: rootProject.file('gradle/demo.gradle')
 
 dependencies {
-    implementation project(":launch")
-    implementation project(":init:hotfix")
+    implementation "com.volcengine:hotfix-frankie"
 }

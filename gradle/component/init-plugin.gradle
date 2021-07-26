@@ -2,7 +2,7 @@
  * init scheduler framework gradle script
  */
 project.buildscript.dependencies.with {
-    classpath BaselineDeps.init_task_plugin
+    classpath "com.bytedance.lego.plugin:init-scheduler:1.0.6-alpha.91"
 }
 
 project.ext.marsAppTasks.put("init", { p ->

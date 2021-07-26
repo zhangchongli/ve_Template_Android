@@ -3,17 +3,29 @@ package com.volcengine.mars.demo.qrcode
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
-import com.volcengine.mars.activity.BaseActivity
+import androidx.appcompat.app.AppCompatActivity
+import com.volcengine.mars.permissions.PermissionsManager
 import com.volcengine.mars.qrcode.QrCode
 import com.volcengine.mars.qrcode.QrCode.ScanCallback
 import com.volcengine.onekit.OneKitApp
 import com.volcengine.onekit.service.Log
 
-class QrCodeDemoActivity : BaseActivity() {
+class QrCodeDemoActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_qrcode_demo)
+    }
+
+    /**
+     * handle the permission request callbacks
+     * */
+    override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<String?>, grantResults: IntArray) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+        if (requestCode shr 16 and 0xffff == 0) {
+            // forwarding request to permission manager
+            PermissionsManager.getInstance().notifyPermissionsChange(this, permissions, grantResults)
+        }
     }
 
     fun onClick(v: View) {
