@@ -16,6 +16,7 @@ public class HotfixDemoActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hotfix_demo);
+        HotfixHelper.getInstance().init(this.getApplication());
 
         findViewById(R.id.btn_fetch_patch_from_net).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -63,7 +64,8 @@ public class HotfixDemoActivity extends AppCompatActivity {
     @Modify
     private void javaTest() {
         ModifyMark.modify();
-        String desc = "text after fix";
+        String desc = "text before fix";
         ((TextView) findViewById(R.id.tv_show)).setText(desc);
+        throw new RuntimeException("Simulate app crash");
     }
 }

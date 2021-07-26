@@ -14,7 +14,7 @@ import android.widget.AdapterView.OnItemSelectedListener
 import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.annotation.RequiresApi
-import com.volcengine.mars.activity.BaseActivity
+import androidx.appcompat.app.AppCompatActivity
 import com.volcengine.mars.permissions.PermissionsManager
 import com.volcengine.mars.permissions.PermissionsResultAction
 import com.volcengine.mars.utils.ScreenAdapterUtils
@@ -26,9 +26,8 @@ import kotlinx.android.synthetic.main.activity_screen_tools.screen_shot_webview_
 import kotlinx.android.synthetic.main.activity_screen_tools.webView
 import java.io.File
 import java.io.FileInputStream
-import java.io.FileOutputStream
 
-class ScreenToolsActivity : BaseActivity() {
+class ScreenToolsActivity : AppCompatActivity() {
 
     private var type = 0
 
@@ -79,6 +78,17 @@ class ScreenToolsActivity : BaseActivity() {
 
                 checkSavedImage(filePath)
             }
+        }
+    }
+
+    /**
+     * handle the permission request callbacks
+     * */
+    override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<String?>, grantResults: IntArray) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+        if (requestCode shr 16 and 0xffff == 0) {
+            // forwarding request to permission manager
+            PermissionsManager.getInstance().notifyPermissionsChange(this, permissions, grantResults)
         }
     }
 

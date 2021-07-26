@@ -1,6 +1,7 @@
 apply from: rootProject.file('gradle/demo.gradle')
-apply plugin: 'kotlin-android'
 
 dependencies {
-    implementation BaselineDeps.qrcode
+    implementation "com.volcengine.mars:qrcode"
+    implementation "com.volcengine.onekit:onekit"
+    implementation "com.volcengine.mars:utility"
 }

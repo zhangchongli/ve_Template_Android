@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cl_parent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.volcengine.mira.MiraDemoActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/btn_toPluginListPage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:text="插件状态列表"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/btn_toPlugin1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:text="跳转到插件1的Activity"
+                app:layout_constraintTop_toBottomOf="@id/tv_plugin1" />
+
+            <Button
+                android:id="@+id/btn_preLoadPlugin1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:text="预加载插件1"
+                app:layout_constraintTop_toBottomOf="@id/btn_toPlugin1" />
+
+            <Button
+                android:id="@+id/btn_startPlugin1Service"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:text="开启插件1的Service"
+                app:layout_constraintTop_toBottomOf="@id/btn_preLoadPlugin1" />
+
+            <Button
+                android:id="@+id/btn_sendBroadcastToPlugin1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:text="发送广播至插件1"
+                app:layout_constraintTop_toBottomOf="@id/btn_startPlugin1Service" />
+
+            <Button
+                android:id="@+id/btn_invokePlugin1Provider"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:text="访问插件1的Provider"
+                app:layout_constraintTop_toBottomOf="@id/btn_sendBroadcastToPlugin1" />
+
+            <Button
+                android:id="@+id/btn_getPlugin1Fragment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:text="获取展示插件1的Fragment"
+                app:layout_constraintTop_toBottomOf="@id/btn_invokePlugin1Provider" />
+
+            <Button
+                android:id="@+id/btn_downloadPlugin2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:text="手动下载插件2"
+                app:layout_constraintTop_toBottomOf="@+id/tv_plugin2"
+                />
+
+            <Button
+                android:id="@+id/btn_toPlugin2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:text="跳转到插件2的Activity"
+                app:layout_constraintTop_toBottomOf="@id/btn_downloadPlugin2" />
+
+            <Button
+                android:id="@+id/btn_toPlugin3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:text="下载并跳转到插件3的Activity"
+                app:layout_constraintTop_toBottomOf="@id/tv_plugin3" />
+
+            <FrameLayout
+                android:id="@+id/fl_show_fragment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/btn_getPlugin1Fragment" />
+
+            <TextView
+                android:id="@+id/tv_plugin1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textSize="26dp"
+                android:text="插件1--自动下载安装"
+                app:layout_constraintTop_toBottomOf="@id/btn_toPluginListPage" />
+
+            <TextView
+                android:id="@+id/tv_plugin2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textSize="26dp"
+                android:text="插件2--手动下载安装"
+                app:layout_constraintTop_toBottomOf="@id/fl_show_fragment" />
+
+            <TextView
+                android:id="@+id/tv_plugin3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textSize="26dp"
+                android:text="插件3--暂未启用"
+                app:layout_constraintTop_toBottomOf="@id/btn_toPlugin2" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

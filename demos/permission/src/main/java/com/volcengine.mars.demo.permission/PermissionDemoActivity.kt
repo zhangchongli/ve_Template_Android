@@ -13,7 +13,7 @@ import android.widget.ArrayAdapter
 import android.widget.CheckedTextView
 import android.widget.ListView
 import android.widget.Toast
-import com.volcengine.mars.activity.BaseActivity
+import androidx.appcompat.app.AppCompatActivity
 import com.volcengine.mars.permissions.PermissionsManager
 import com.volcengine.mars.permissions.PermissionsManager.DefaultDialogBuilder
 import com.volcengine.mars.permissions.PermissionsManager.DialogBuilder
@@ -21,7 +21,7 @@ import com.volcengine.mars.permissions.PermissionsManager.DialogBuilderProvider
 import com.volcengine.mars.permissions.PermissionsResultAction
 import java.util.HashMap
 
-class PermissionDemoActivity : BaseActivity() {
+class PermissionDemoActivity : AppCompatActivity() {
     companion object {
         private const val TAG = "PermissionDemoActivity"
     }
@@ -51,6 +51,17 @@ class PermissionDemoActivity : BaseActivity() {
                 }
             }
         listView.choiceMode = ListView.CHOICE_MODE_MULTIPLE
+    }
+
+    /**
+     * handle the permission request callbacks
+     * */
+    override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<String?>, grantResults: IntArray) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+        if (requestCode shr 16 and 0xffff == 0) {
+            // forwarding request to permission manager
+            PermissionsManager.getInstance().notifyPermissionsChange(this, permissions, grantResults)
+        }
     }
 
     @Synchronized

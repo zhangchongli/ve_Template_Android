@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFF00">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btn_invokeHostCode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="22dp"
+            android:layout_marginTop="22dp"
+            android:layout_marginRight="22dp"
+            android:text="调用宿主代码"
+            app:layout_constraintTop_toBottomOf="@id/tv_showPluginName" />
+
+        <Button
+            android:id="@+id/btn_invokeHostRes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="22dp"
+            android:layout_marginTop="22dp"
+            android:layout_marginRight="22dp"
+            android:text="@string/host_string"
+            app:layout_constraintTop_toBottomOf="@id/btn_invokeHostCode" />
+
+        <Button
+            android:id="@+id/btn_toHostActivity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="22dp"
+            android:layout_marginTop="22dp"
+            android:layout_marginRight="22dp"
+            android:text="跳转到宿主的Activity"
+            app:layout_constraintTop_toBottomOf="@id/btn_invokeHostRes" />
+
+        <Button
+            android:id="@+id/btn_toPlugin1Activity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="22dp"
+            android:layout_marginTop="22dp"
+            android:layout_marginRight="22dp"
+            android:text="跳转到插件1的Activity"
+            app:layout_constraintTop_toBottomOf="@id/btn_toHostActivity" />
+
+        <Button
+            android:id="@+id/btn_startPlugin1Service"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="22dp"
+            android:layout_marginTop="22dp"
+            android:layout_marginRight="22dp"
+            android:text="开启插件1的服务"
+            app:layout_constraintTop_toBottomOf="@id/btn_toPlugin1Activity" />
+
+        <Button
+            android:id="@+id/btn_sendBroadcastToPlugin1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="22dp"
+            android:layout_marginTop="22dp"
+            android:layout_marginRight="22dp"
+            android:text="发送广播至插件1"
+            app:layout_constraintTop_toBottomOf="@id/btn_startPlugin1Service" />
+
+        <Button
+            android:id="@+id/btn_invokePlugin1Provider"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="22dp"
+            android:layout_marginTop="22dp"
+            android:layout_marginRight="22dp"
+            android:text="访问插件1的Provider"
+            app:layout_constraintTop_toBottomOf="@id/btn_sendBroadcastToPlugin1" />
+
+
+        <Button
+            android:id="@+id/btn_getPlugin1Fragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="22dp"
+            android:layout_marginTop="22dp"
+            android:layout_marginRight="22dp"
+            android:text="获取展示插件1的Fragment"
+            app:layout_constraintTop_toBottomOf="@id/btn_invokePlugin1Provider" />
+
+        <FrameLayout
+            android:id="@+id/fl_show_fragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/btn_getPlugin1Fragment" />
+
+
+        <TextView
+            android:id="@+id/tv_version"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_showPluginName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="22dp"
+            android:layout_marginTop="22dp"
+            android:layout_marginRight="22dp"
+            android:text="Welcome to plugin2" />
+    </LinearLayout>
+</ScrollView>

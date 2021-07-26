@@ -8,8 +8,10 @@ include(":launch")
 // >>>>>>>>>>>>>>>> 加载【组件接入模块】
 def thirdparty = file(rootDir.absolutePath + File.separator + "init")
 if (thirdparty.exists()) {
-    thirdparty.eachDir {
-        include(":init:${it.name}")
+    thirdparty.eachDir { dir ->
+        if (new File(dir, "build.gradle").exists()) {
+            include(":init:${dir.name}")
+        }
     }
 }
 // <<<<<<<<<<<<<<<< 加载【组件接入模块】
@@ -17,8 +19,21 @@ if (thirdparty.exists()) {
 // >>>>>>>>>>>>>>>> 加载【组件demo模块】
 def demos = file(rootDir.absolutePath + File.separator + "demos")
 if (demos.exists()) {
-    demos.eachDir {
-        include(":demos:${it.name}")
+    demos.eachDir { dir ->
+        if (new File(dir, "build.gradle").exists()) {
+            include(":demos:${dir.name}")
+        }
     }
 }
 // <<<<<<<<<<<<<<<<
+
+// >>>>>>>>>>>>>>>> 加载【mira plugins模块】
+def plugins = file(rootDir.absolutePath + File.separator + "plugins")
+if (plugins.exists()) {
+    plugins.eachDir { dir ->
+        if (new File(dir, "build.gradle").exists()) {
+            include(":plugins:${dir.name}")
+        }
+    }
+}
+// <<<<<<<<<<<<<<<< 加载【mira plugins模块】

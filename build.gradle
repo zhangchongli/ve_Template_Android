@@ -1,3 +1,7 @@
+pluginsx {
+    id 'mira_root'
+}
+
 buildscript {
     repositories {
         maven {

@@ -1,0 +1,12 @@
+/**
+ *  service manager framework gradle script
+ */
+project.buildscript.dependencies.with {
+    classpath "com.bytedance.news.common:service-manager-plugin:1.1.0.4"
+}
+
+project.ext.marsAppTasks.put("service_manager", { p ->
+    p.with {
+        apply plugin: 'com.bytedance.news.common.service-manager'
+    }
+})

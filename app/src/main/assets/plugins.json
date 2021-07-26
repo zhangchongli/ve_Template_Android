@@ -1,0 +1,11 @@
+[
+  {
+    "packageName": "com.volcengine.plugin1"
+  },
+  {
+    "packageName": "com.volcengine.plugin2"
+  },
+  {
+    "packageName": "com.volcengine.plugin3"
+  }
+]
