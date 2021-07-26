@@ -15,11 +15,13 @@ import kotlinx.android.synthetic.main.activity_h5_main.openExampleOnlineActivity
 import java.util.regex.Pattern
 
 class H5MainActivity : AppCompatActivity() {
+    private val POC_URL = "https://poc-api.vemarsdev.com/"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         VEH5.initialize(
             VEH5Config.Builder()
+                .setOfflineResourceServiceAddress(POC_URL)
                 .enableDebug(true)
                 .setDeviceId("7135843788734")
                 .setOfflineResourceAccessKey("d3d71ae74f5383ec33b4fd85b298f50f")

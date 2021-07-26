@@ -7,6 +7,8 @@ import com.bytedance.frankie.FrankieConfigExternalAdapter;
 
 public class HotfixHelper {
 
+    private final static String POC_URL = "https://poc-api.vemarsdev.com/api/plugin/config/v3/";
+
     /**
      * channel description, you can choose specific channel
      * in patch publish service
@@ -28,6 +30,7 @@ public class HotfixHelper {
 
     public void init(@NonNull Application application) {
         Frankie.getInstance().init(new DemoFrankieConfig(application));
+        Frankie.getInstance().setServerUrl(POC_URL);
     }
 
     /**
