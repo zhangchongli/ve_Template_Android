@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
+    <public type="attr" name="layout_constraintTop_toBottomOf" id="0x7f040000"/>
+    <public type="attr" name="layout_constraintLeft_toLeftOf" id="0x7f040001"/>
+    <public type="attr" name="layout_constraintTop_toTopOf" id="0x7f040002"/>
+    <public type="attr" name="layout_constraintRight_toRightOf" id="0x7f040003"/>
 </resources>
