@@ -30,9 +30,13 @@ import java.io.FileInputStream
 class ScreenToolsActivity : AppCompatActivity() {
 
     private var type = 0
+    companion object{
+        var targetDp = 380
+    }
 
     @RequiresApi(VERSION_CODES.LOLLIPOP)
     override fun onCreate(savedInstanceState: Bundle?) {
+        ScreenAdapterUtils.setCustomDensity(this, this.application, targetDp)
         /**
          * WebView.enableSlowWholeDocumentDraw() is called to avoid incomplete screenshot
          * */
@@ -47,12 +51,12 @@ class ScreenToolsActivity : AppCompatActivity() {
 
         screen_dp_button.setOnClickListener {
             when (type) {
-                0 -> ScreenAdapterUtils.setCustomDensity(this, this.application, 200)
-                1 -> ScreenAdapterUtils.setCustomDensity(this, this.application, 380)
-                2 -> ScreenAdapterUtils.setCustomDensity(this, this.application, 480)
-                3 -> ScreenAdapterUtils.setCustomDensity(this, this.application, 700)
-                4 -> ScreenAdapterUtils.setCustomDensity(this, this.application, 1000)
-                else -> ScreenAdapterUtils.setCustomDensity(this, this.application, 480)
+                0 -> targetDp = 200
+                1 -> targetDp = 380
+                2 -> targetDp = 480
+                3 -> targetDp = 700
+                4 -> targetDp = 1000
+                else -> targetDp = 480
             }
             finish();
             startActivity(getIntent());
