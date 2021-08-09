@@ -17,7 +17,7 @@ public class Plugin1MainActivity extends Activity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_mira_main);
+        setContentView(R.layout.activity_main);
         mVersionTv = findViewById(R.id.tv_version);
         try {
             int versionCode = Plugin1MainActivity.this.getPackageManager()

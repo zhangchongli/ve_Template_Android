@@ -34,7 +34,7 @@ public class Plugin2MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_mira_main);
+        setContentView(R.layout.activity_main);
 
         mVersionTv = findViewById(R.id.tv_version);
         try {
