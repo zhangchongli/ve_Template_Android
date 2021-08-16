@@ -60,7 +60,7 @@ dependencies {
     implementation BaselineDeps.appcompat
     implementation project(":launch")
 
-    implementation platform ("com.volcengine.mars:platform:0.0.1-rc.32")
+    implementation platform ("com.volcengine.mars:platform:0.0.1-rc.33")
 
     implementation 'com.volcengine.mars:dev-tool'
     kapt "com.bytedance.news.common:service-manager-processor:1.0.9"
