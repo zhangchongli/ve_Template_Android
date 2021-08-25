@@ -60,7 +60,7 @@ dependencies {
     implementation BaselineDeps.appcompat
     implementation project(":launch")
 
-    implementation platform ("com.volcengine.mars:platform:0.0.1-rc.21")
+    implementation platform ("com.volcengine.mars:platform:0.0.1-rc.33")
 
     implementation 'com.volcengine.mars:dev-tool'
     kapt "com.bytedance.news.common:service-manager-processor:1.0.9"
@@ -86,4 +86,8 @@ dependencies {
     debugImplementation project(":demos:hotfix")
     //引入mira内容
     debugImplementation project(":demos:mira")
+}
+
+task dependencyReportFile(type: DependencyReportTask) {
+    outputFile = file('./build/dependencies.txt')
 }

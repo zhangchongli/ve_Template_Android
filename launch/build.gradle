@@ -2,7 +2,7 @@ apply from: rootProject.file('gradle/library.gradle')
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation platform ("com.volcengine.mars:platform:0.0.1-rc.21")
+    implementation platform ("com.volcengine.mars:platform:0.0.1-rc.33")
     implementation 'androidx.localbroadcastmanager:localbroadcastmanager:1.0.0'
 
     kapt "com.bytedance.news.common:service-manager-processor:1.0.9"
