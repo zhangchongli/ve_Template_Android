@@ -2,7 +2,7 @@
  * hotfix component gradle script
  */
 project.buildscript.dependencies.with {
-    classpath "com.volcengine:hotfix-gradle-tools:2.3.1"
+    classpath "com.volcengine:hotfix-gradle-tools:2.3.2"
 }
 
 project.ext.marsAppTasks.put("hotfix", { p ->
