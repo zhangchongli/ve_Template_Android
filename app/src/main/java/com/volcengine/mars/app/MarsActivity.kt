@@ -11,8 +11,6 @@ import com.bytedance.lego.init.model.InitPeriod.MAIN_ONRESUME2SUPER
 import com.bytedance.lego.init.model.InitPeriod.MAIN_SUPER2ONCREATEEND
 import com.bytedance.lego.init.model.InitPeriod.MAIN_SUPER2ONRESUMEEND
 import com.volcengine.mars.activity.BaseActivity
-import com.volcengine.mars.app.R.id
-import com.volcengine.mars.app.R.layout
 import com.volcengine.mars.utils.AppUtils
 
 class MarsActivity : BaseActivity() {
@@ -23,7 +21,7 @@ class MarsActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         MPLaunch.onPeriod(this.application, MAIN_ONCREATE2SUPER)
         super.onCreate(savedInstanceState)
-        setContentView(layout.main_activity_layout)
+        setContentView(R.layout.main_activity_layout)
         MPLaunch.onPeriod(this.application, MAIN_SUPER2ONCREATEEND)
     }
 
@@ -42,7 +40,7 @@ class MarsActivity : BaseActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
         return when (item?.itemId) {
-            id.developer_helper -> {
+            R.id.developer_helper -> {
                 val comp = ComponentName(
                     this,
                     "com.volcengine.dev_tool.DeveloperActivity"
