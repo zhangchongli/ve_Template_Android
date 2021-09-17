@@ -4,5 +4,5 @@ dependencies {
     implementation 'com.volcengine:mira'
     implementation 'com.volcengine:morpheus-mira'
     implementation "com.bytedance.lego:init-api"
-    implementation project(':launch')
+    implementation "com.volcengine.onekit:onekit"
 }

@@ -2,10 +2,12 @@ pluginsx {
     id 'android'
     id 'mira'
     id 'onekit'
+    id 'applog'
     id 'init'
     id 'kotlin'
     id 'service_manager'
     id 'hotfix'
+    id 'apm'
 }
 
 android {
@@ -20,13 +22,13 @@ android {
         applicationId "com.volcengine.mars"
         multiDexEnabled true
 
-        versionCode 1
+        versionCode 1100
         versionName "1.1.0"
 
     }
 
     signingConfigs {
-        bytedanceReleaseSignConfig {
+        vemarsReleaseSignConfig {
             storeFile rootProject.file("tools/demo.keystore")
             storePassword 'marsdemo'
             keyAlias 'marsdemo'
@@ -35,7 +37,7 @@ android {
     }
     buildTypes {
         release {
-            signingConfig signingConfigs.bytedanceReleaseSignConfig
+            signingConfig signingConfigs.vemarsReleaseSignConfig
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
@@ -55,17 +57,20 @@ dependencies {
     implementation BaselineDeps.constraint_layout
     implementation BaselineDeps.support_compat
     implementation BaselineDeps.appcompat
-    implementation project(":launch")
 
-    implementation platform ("com.volcengine.mars:platform:0.0.1-rc.35")
+    implementation platform ("com.volcengine.mars:platform:0.0.1-rc.43")
 
     implementation 'com.volcengine.mars:dev-tool'
+    implementation 'com.volcengine.mars:base-component'
     kapt "com.bytedance.news.common:service-manager-processor:1.0.9"
     implementation "com.bytedance.news.common:service-manager"
     implementation "com.bytedance.lego:init-api"
     implementation "com.bytedance.lego:init-scheduler"
     implementation 'com.volcengine:mira'
     implementation 'com.volcengine:morpheus-mira'
+    implementation 'com.volcengine:apm_insight'
+    implementation 'com.volcengine:apm_insight_crash'
+    implementation 'com.bytedance.applog:RangersAppLog-All-cn'
 
     //引入immersed内容
     debugImplementation project(":demos:immersed")
@@ -80,11 +85,13 @@ dependencies {
     //引入h5_service服务内容
     debugImplementation project(":demos:h5_service")
     //引入hotfix内容
-    debugImplementation project(":demos:hotfix")
+    implementation project(":demos:hotfix")
     //引入mira内容
     debugImplementation project(":demos:mira")
-}
-
-task dependencyReportFile(type: DependencyReportTask) {
-    outputFile = file('./build/dependencies.txt')
+    //引入update内容
+    debugImplementation project(":demos:update")
+    //引入applog内容
+    debugImplementation project(":demos:applog")
+    //引入apm内容
+    debugImplementation project(":demos:apm")
 }

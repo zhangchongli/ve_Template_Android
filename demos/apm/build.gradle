@@ -1,0 +1,9 @@
+apply from: rootProject.file('gradle/demo.gradle')
+
+dependencies {
+    //引入apm应用性能监控
+    implementation("com.volcengine:apm_insight")
+    implementation("com.volcengine:apm_insight_crash")
+    implementation "com.volcengine.onekit:onekit"
+    implementation "com.bytedance.lego:init-api"
+}

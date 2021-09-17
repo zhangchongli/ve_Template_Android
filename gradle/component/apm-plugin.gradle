@@ -1,0 +1,32 @@
+/**
+ * apm component gradle script
+ */
+project.buildscript.dependencies.with {
+    classpath "com.volcengine:apm_insight_plugin:1.3.13"
+}
+
+project.ext.marsAppTasks.put("apm", { p ->
+    p.with {
+        apply plugin: 'apm-plugin'
+        ApmPlugin {
+            // 是否进行插桩
+            enable true
+            // 是否在Debug包插桩，默认不插桩
+            enableInDebug true
+            // 启动分析开关：监控App启动耗时，需要同时开启pageLoadSwitch
+            startSwitch = true
+            // 页面响应开关：监控Activity的生命周期耗时
+            pageLoadSwitch = true
+            // 网络监控开关：监控okhttp3的网络请求
+            okHttp3Switch = true
+            // 白名单下的包进行插桩，需要填写要插装类的包名，可以填写自己的包名
+            whiteList = [
+                    "com.xxx"
+            ]
+            // 黑名单包下类不进行插桩，可以配置包名和类名，没有可以填空
+            blackList = [
+                    "com.xxx"
+            ]
+        }
+    }
+})

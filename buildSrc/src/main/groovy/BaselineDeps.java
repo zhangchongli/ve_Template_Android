@@ -23,7 +23,7 @@ public class BaselineDeps {
     /***********************
      ** init scheduler
      ***********************/
-    private static String INIT_VERSION = "1.0.6-alpha.91";
+    private static String INIT_VERSION = "1.0.6-alpha.95";
     public static String init_task_plugin = "com.bytedance.lego.plugin:init-scheduler:" + INIT_VERSION;
     public static String init_task_scheduler = "com.bytedance.lego:init-scheduler:" + INIT_VERSION;
     public static String init_task_api = "com.bytedance.lego:init-api:" + INIT_VERSION;
@@ -39,14 +39,14 @@ public class BaselineDeps {
     /***********************
      ** onekit sdk
      ***********************/
-    private static String ONEKIT_VERSION = "0.0.1-rc.10";
+    private static String ONEKIT_VERSION = "0.0.1-rc.18";
     public static String onekit_sdk = "com.volcengine.onekit:onekit:" + ONEKIT_VERSION;
     public static String onekit_plugin = "com.volcengine.onekit:onekit-plugin:" + ONEKIT_VERSION;
 
     /***********************
      ** hotfix
      ***********************/
-    private static String HOTFIX_VERSION = "2.2.0";
+    private static String HOTFIX_VERSION = "2.3.3";
     public static String hotfix_sdk = "com.volcengine:hotfix-frankie:" + HOTFIX_VERSION;
     public static String hotfix_plugin = "com.volcengine:hotfix-gradle-tools:" + HOTFIX_VERSION;
     /*******************
@@ -57,12 +57,12 @@ public class BaselineDeps {
     /*******************
      * 二维码
      *******************/
-    public static String qrcode = "com.volcengine.mars:qrcode:0.0.1-rc.4";
+    public static String qrcode = "com.volcengine.mars:qrcode:0.0.1-rc.6";
 
     /*******************
      * 工具库（沉浸式、权限、截屏、屏幕适配）
      *******************/
-    public static String utility = "com.volcengine.mars:utility:0.0.1-rc.4";
+    public static String utility = "com.volcengine.mars:utility:0.0.1-rc.6  ";
 
     /*******************
      * 下载库

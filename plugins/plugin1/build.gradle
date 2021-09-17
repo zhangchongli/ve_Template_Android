@@ -20,7 +20,7 @@ android {
     }
 
     signingConfigs {
-        bytedanceReleaseSignConfig {
+        vemarsReleaseSignConfig {
             storeFile rootProject.file("tools/demo.keystore")
             storePassword 'marsdemo'
             keyAlias 'marsdemo'
@@ -30,7 +30,7 @@ android {
 
     buildTypes {
         release {
-            signingConfig signingConfigs.bytedanceReleaseSignConfig
+            signingConfig signingConfigs.vemarsReleaseSignConfig
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
