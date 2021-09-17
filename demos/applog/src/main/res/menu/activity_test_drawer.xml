@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <item android:title="系统">
+        <menu>
+            <item
+                android:id="@+id/listView"
+                android:title="ListView" />
+            <item
+                android:id="@+id/gridView"
+                android:title="GridView" />
+            <item
+                android:id="@+id/expandableListView"
+                android:title="ExpandableListView" />
+            <item
+                android:id="@+id/gallery"
+                android:title="Gallery" />
+            <item
+                android:id="@+id/spinner"
+                android:title="Spinner" />
+        </menu>
+    </item>
+
+    <item android:title="Support">
+        <menu>
+            <item
+                android:id="@+id/viewPagerS"
+                android:title="ViewPager" />
+            <item
+                android:id="@+id/gridViewS"
+                android:title="GridView" />
+            <item
+                android:id="@+id/expandableListViewS"
+                android:title="ExpandableListView" />
+            <item
+                android:id="@+id/galleryS"
+                android:title="Gallery" />
+            <item
+                android:id="@+id/spinnerS"
+                android:title="Spinner" />
+        </menu>
+    </item>
+
+    <item android:title="AndroidX">
+        <menu>
+            <item
+                android:id="@+id/viewPagerX"
+                android:title="ViewPager" />
+        </menu>
+    </item>
+
+    <item android:title="导航">
+        <menu>
+            <item
+                android:id="@+id/fragment"
+                android:title="Fragment" />
+            <item
+                android:id="@+id/dialog"
+                android:title="Dialog" />
+        </menu>
+    </item>
+
+</menu>

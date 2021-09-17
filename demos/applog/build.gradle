@@ -1,0 +1,11 @@
+apply from: rootProject.file('gradle/demo.gradle')
+
+dependencies {
+    implementation BaselineDeps.material
+    implementation "com.bytedance.applog:RangersAppLog-All-cn"
+    implementation "com.bytedance.news.common:service-manager"
+    kapt "com.bytedance.news.common:service-manager-processor:1.0.9"
+    implementation "com.volcengine.mars:utility"
+    implementation "com.volcengine.onekit:onekit"
+    implementation "com.bytedance.lego:init-api"
+}

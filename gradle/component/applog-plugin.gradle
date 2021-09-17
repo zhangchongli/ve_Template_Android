@@ -1,0 +1,19 @@
+/**
+ * applog component gradle script
+ */
+project.buildscript.dependencies.with {
+    classpath "com.bytedance.applog:RangersAppLog-All-plugin:6.4.0"
+}
+
+project.ext.marsAppTasks.put("applog", { p ->
+    p.with {
+        apply plugin: 'com.bytedance.std.tracker'
+
+        android {
+            defaultConfig {
+                // 不同app配置不同
+                manifestPlaceholders.put("APPLOG_SCHEME", "rangersapplog.abcdefgh12345678".toLowerCase())
+            }
+        }
+    }
+})

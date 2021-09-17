@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="#ebebeb"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <TextView
+            android:id="@+id/switch_new_user"
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:layout_marginTop="50dp"
+            android:checked="false"
+            android:padding="5dp"
+            android:text="以下功能为AppLog核心能力，Demo仅供参考" />
+
+        <Button
+            android:id="@+id/button_appid"
+            android:layout_width="match_parent"
+            style="@style/TestButton"
+            android:text="获取appid"></Button>
+
+        <Button
+            android:id="@+id/button_did"
+            android:layout_width="match_parent"
+            style="@style/TestButton"
+            android:text="获取did"></Button>
+
+        <Button
+            android:id="@+id/button_iid"
+            android:layout_width="match_parent"
+            style="@style/TestButton"
+            android:text="获取iid"></Button>
+
+        <Button
+            android:id="@+id/button_ssid"
+            android:layout_width="match_parent"
+            style="@style/TestButton"
+            android:text="获取ssid"></Button>
+
+        <Button
+            android:id="@+id/button_clientudid"
+            android:layout_width="match_parent"
+            style="@style/TestButton"
+            android:text="获取clientudid"></Button>
+
+        <Button
+            android:id="@+id/button_custom_click_event"
+            android:layout_width="match_parent"
+            style="@style/TestButton"
+            android:text="发送即使事件real_time_click"></Button>
+
+        <Button
+            android:id="@+id/button_user_id"
+            android:layout_width="match_parent"
+            style="@style/TestButton"
+            android:text="修改userId"></Button>
+
+        <Button
+            android:id="@+id/button_ab_config"
+            android:layout_width="match_parent"
+            style="@style/TestButton"
+            android:text="getAbConfig"></Button>
+
+        <Button
+            android:id="@+id/button_ab_config_version"
+            android:layout_width="match_parent"
+            style="@style/TestButton"
+            android:text="getAbConfigVersion"></Button>
+
+        <Button
+            android:id="@+id/button_ab_exposed"
+            android:layout_width="match_parent"
+            style="@style/TestButton"
+            android:text="ab曝光"></Button>
+
+        <Button
+            android:id="@+id/button_succ_rate"
+            android:layout_width="match_parent"
+            style="@style/TestButton"
+            android:text="发送成功率事件"></Button>
+
+        <Button
+            android:id="@+id/button_empty_name_event"
+            android:layout_width="match_parent"
+            style="@style/TestButton"
+            android:text="发送不合法名称事件"></Button>
+
+        <Button
+            android:id="@+id/button_set_uuid"
+            android:layout_width="match_parent"
+            style="@style/TestButton"
+            android:text="设置uuid"></Button>
+
+        <Button
+            android:id="@+id/button_set_custom"
+            android:layout_width="match_parent"
+            style="@style/TestButton"
+            android:text="设置header自定义属性1"></Button>
+
+        <Button
+            android:id="@+id/button_set_custom2"
+            android:layout_width="match_parent"
+            style="@style/TestButton"
+            android:text="设置header自定义属性2"></Button>
+
+    </LinearLayout>
+</ScrollView>
