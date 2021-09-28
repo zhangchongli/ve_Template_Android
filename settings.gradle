@@ -1,5 +1,5 @@
 // 自动引入gradle/component下的脚本
-apply from: "https://lf1-ttcdn-tos.pstatp.com/obj/mars-plugin/component-script.gradle"
+apply from: "https://lf3-fwk-res.vemarsstatic.com/obj/mars-plugin/component-script.gradle"
 
 include ':app'
 include(":buildSrc")
