@@ -9,6 +9,15 @@
                 <action android:name="com.volcengine.mars.action.demo" />
             </intent-filter>
         </activity>
+        <provider
+            android:authorities="com.mars.android.update"
+            android:name="androidx.core.content.FileProvider"
+            android:grantUriPermissions="true"
+            android:exported="false" >
+            <meta-data
+                android:resource="@xml/filepaths"
+                android:name="android.support.FILE_PROVIDER_PATHS"/>
+        </provider>
     </application>
 
 </manifest>
