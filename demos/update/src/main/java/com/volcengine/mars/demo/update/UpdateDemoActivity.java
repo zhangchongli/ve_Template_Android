@@ -39,7 +39,6 @@ public class UpdateDemoActivity extends AppCompatActivity {
         mButton = findViewById(R.id.updateButton);
         UpdateConfig updateConfig = getUpdateConfig();
         VEUpdate.initialize(updateConfig);
-        VEUpdate.setCheckSignature(false);
         mButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(final View v) {
