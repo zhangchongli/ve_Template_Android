@@ -74,7 +74,7 @@ dependencies {
 
     //引入immersed内容
     debugImplementation project(":demos:immersed")
-    //引入permission内容
+    //引入permission内容1
     debugImplementation project(":demos:permission")
     //引入screen内容
     debugImplementation project(":demos:screentools")
