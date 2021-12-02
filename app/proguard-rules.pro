@@ -22,7 +22,7 @@
     public static final android.os.Parcelable$Creator *;
 }
 
-# 枚举类混淆规则
+# 枚举类混淆规则1
 -keepclassmembers enum * {
     public static **[] values();
     public static ** valueOf(java.lang.String);
